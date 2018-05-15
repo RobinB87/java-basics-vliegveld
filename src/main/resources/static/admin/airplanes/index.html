@@ -57,7 +57,7 @@
         <!-- Content-->
         <div class="modal-content">
             <div class="modal-header text-left">
-                <h4 class="modal-name">Edit airplane</h4>
+                <h4 class="modal-name">Add airplane</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -71,6 +71,12 @@
                                data-error="DAT IS GEEN NAAM BOYO!" required>
                         <label for="addAirplaneFuelField" class="control-label">Amount of fuel of airplane</label>
                         <input type="number" class="form-control" id="addAirplaneFuelField" placeholder="Enter the current amount of fuel"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                        <label for="addAirplaneIsFlyingField" class="control-label">Flying?</label>
+                        <input type="number" class="form-control" id="addAirplaneIsFlyingField" placeholder="Enter yes / no"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                        <label for="addAirplaneIsLoadingFuelField" class="control-label">Loading fuel?</label>
+                        <input type="number" class="form-control" id="addAirplaneIsLoadingFuelField" placeholder="Enter yes / no"
                                data-error="DAT IS GEEN PRICE BOYO!" required>
                     </div>
 
@@ -109,6 +115,12 @@
                                data-error="DAT IS GEEN NAAM BOYO!" required>
                         <label for="editAirplaneFuelField" class="control-label">Amount of fuel of airplane</label>
                         <input type="number" class="form-control" id="editAirplaneFuelField" placeholder="Enter a price"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                        <label for="editAirplaneIsFlyingField" class="control-label">Flying?</label>
+                        <input type="number" class="form-control" id="editAirplaneIsFlyingField" placeholder="Enter yes / no"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                        <label for="editAirplaneIsLoadingFuelField" class="control-label">Loading fuel?</label>
+                        <input type="number" class="form-control" id="editAirplaneIsLoadingFuelField" placeholder="Enter yes / no"
                                data-error="DAT IS GEEN PRICE BOYO!" required>
                     </div>
 
@@ -157,4 +169,4 @@
     </div>
 </div>
 
-<script src="../javascript/airplanes.js"></script>
+<script src="../admin/js/airplanes.js"></script>

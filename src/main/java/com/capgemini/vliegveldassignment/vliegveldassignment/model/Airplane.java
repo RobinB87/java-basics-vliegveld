@@ -9,27 +9,18 @@ import javax.persistence.Entity;
 @Data
 public class Airplane extends Base {
 
-
-    private boolean isFlying;
     private int fuel;
     private boolean isLoadingFuel;
+    private boolean isFlying;
 
-    private Airplane(int id, String name, boolean isFlying, int fuel, boolean isLoadingFuel){
+    private Airplane(int id, String name, int fuel, boolean isFlying, boolean isLoadingFuel){
         super(id, name);
-        this.isFlying = isFlying;
         this.fuel = fuel;
         this.isLoadingFuel = isLoadingFuel;
+        this.isFlying = isFlying;
     }
 
     private Airplane(){}
-
-    public boolean isFlying() {
-        return isFlying;
-    }
-
-    public void setFlying(boolean flying) {
-        isFlying = flying;
-    }
 
     public int getFuel() {
         return fuel;
@@ -45,5 +36,13 @@ public class Airplane extends Base {
 
     public void setLoadingFuel(boolean loadingFuel) {
         isLoadingFuel = loadingFuel;
+    }
+
+    public boolean isFlying() {
+        return isFlying;
+    }
+
+    public void setFlying(boolean flying) {
+        isFlying = flying;
     }
 }

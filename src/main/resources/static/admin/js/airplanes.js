@@ -27,17 +27,22 @@ $(document).ready(function () {
         $('#editAirplaneIdField').val(data.id);
         $('#editAirplaneTitleField').val(data.title);
         $('#editAirplaneFuelField').val(data.fuel);
+        $('#editAirplaneIsFlyingField').val(data.isFlying);
+        $('#editAirplaneIsLoadingFuelField').val(data.isLoadingFuel);
 
         $('#editAirplaneBtn').click(function () {
 
-            var title = $('#editAirplaneIdField').val();
-            var costPrice = $('#editAirplaneTitleField').val();
-            var sellingPrice = $('#editAirplaneFuelField').val();
+            var title = $('#editAirplaneTitleField').val();
+            var fuel = $('#editAirplaneFuelField').val();
+            var isFlying = $('#editAirplaneIsFlyingField').val();
+            var isLoadingFuel = $('#editAirplaneIsLoadingFuelField').val();
 
             $.post('/api/airplane/edit', {
                 id: data.id,
                 title: title,
                 fuel: fuel,
+                isFlying: isFlying,
+                isLoadingFuel: isLoadingFuel
             }, function() {
                 table.clear().draw();
             });
@@ -67,15 +72,21 @@ $(document).ready(function () {
 
             var title = $('#addAirplaneTitleField').val();
             var fuel = $('#addAirplaneFuelField').val();
+            var isFlying = $('#editAirplaneIsFlyingField').val();
+            var isLoadingFuel = $('#editAirplaneIsLoadingFuelField').val();
 
             $.post('/api/airplane/add', {
                 title: title,
-                fuel, fuel
+                fuel: fuel,
+                isFlying: isFlying,
+                isLoadingFuel: isLoadingFuel
             }, function () {
                 table.clear().draw();
             });
 
             $('#addAirplaneTitleField').empty();
             $('#addAirplaneFuelField').empty();
+            $('#editAirplaneIsFlyingField').empty();
+            $('#editAirplaneIsLoadingFuelField').empty();
     });
 });
