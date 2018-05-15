@@ -1,0 +1,160 @@
+<!--Volle Container voor de hele pagina!-->
+<div class="jumbotron-fluid bg-light">
+    <!--breadcrumb-->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Airplanes</li>
+        </ol>
+    </nav>
+
+    <!--Titel-->
+    <div class="row">
+        <div class="container text-center">
+            <h1>Airplanes</h1>
+            <!--<p class="lead"> Airplanes </p>-->
+        </div>
+    </div>
+
+    <!--Row met de button-->
+    <div class=“row”>
+        <div class=“col-md-12”>
+            <div class="card-body text-center">
+
+                <!--Button target zorgt ervoor dat het de modal van new Airplane laat zien (Dus ga naar de Modal -->
+                <button class="btn-secondary" type="button" data-toggle="modal" data-target="#addAirplaneModal">New
+                    Airplane
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class=“row”>
+        <div class=“col-md-12”>
+            <h2></h2>
+            <table id="airplaneTable" class="display table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Fuel</th>
+                    <th>Loading Fuel</th>
+                    <th>Flying</th>
+                    <th>Edit</th>
+                    <th></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal to add airplanes -->
+<div id="addAirplaneModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Content-->
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <h4 class="modal-name">Edit airplane</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+
+                <form data-toggle="validator" role="form" id="addAirplaneForm" onsubmit="return false;">
+                    <div class="form-group">
+
+                        <label for="addAirplaneTitleField" class="control-label">Name of airplane</label>
+                        <input type="text" class="form-control" id="addAirplaneTitleField" placeholder="Enter a name"
+                               data-error="DAT IS GEEN NAAM BOYO!" required>
+                        <label for="addAirplaneFuelField" class="control-label">Amount of fuel of airplane</label>
+                        <input type="number" class="form-control" id="addAirplaneFuelField" placeholder="Enter the current amount of fuel"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="addAirplaneBtn" type="button" class="btn btn-primary" data-dismiss="modal">
+                            Submit
+                        </button>
+                        <button id="closeAddAirplaneBtn" type="button" class="btn btn-default" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal to edit airplanes -->
+<div id="editAirplaneModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Content-->
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <h4 class="modal-name">Edit airplane</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+
+                <form data-toggle="validator" role="form" id="editAirplaneForm" onsubmit="return false;" method="post">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="editAirplaneIdField">
+                        <label for="editAirplaneTitleField" class="control-label">Name of airplane</label>
+                        <input type="text" class="form-control" id="editAirplaneTitleField" placeholder="Enter a name"
+                               data-error="DAT IS GEEN NAAM BOYO!" required>
+                        <label for="editAirplaneFuelField" class="control-label">Amount of fuel of airplane</label>
+                        <input type="number" class="form-control" id="editAirplaneFuelField" placeholder="Enter a price"
+                               data-error="DAT IS GEEN PRICE BOYO!" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="editAirplaneBtn" type="button" class="btn btn-primary" data-dismiss="modal">
+                            Edit
+                        </button>
+                        <button id="editAirplaneCloseBtn" type="button" class="btn btn-default" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal to delete airplanes -->
+<div id="deleteAirplaneModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Content-->
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <h4 class="modal-name">Delete airplane, are you sure!?!?!?</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+
+                <form data-toggle="validator" role="form" id="deleteAirplaneForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <input type="hidden" class="form control" id="deleteAirplaneIdField">
+                    </div>
+
+                    <div class="form-group">
+                        <button id="deleteAirplaneBtn" type="button" class="btn btn-primary" data-dismiss="modal">
+                            Submit
+                        </button>
+                        <button id="closeDeleteAirplaneBtn" type="button" class="btn btn-default" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../javascript/airplanes.js"></script>
